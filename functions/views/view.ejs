@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .jumbotron {
+        background-color: #f8f9fa;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>User Details</h1>
+    </div>
+    <div class="container">
+      <form action="" method="" class="form-group">
+        <label for="">First Name</label>
+        <input type="text" name="name" class="form-control" value="<%= student.firstname %>" disabled>
+        <br>
+        <label for="">Middle Name</label>
+        <input type="text" name="program" class="form-control" value="<%= student.middlename %>" disabled>
+        <br>
+        <label for="">Last Name</label>
+        <input type="text" name="program" class="form-control" value="<%= student.lastname%>" disabled>
+        <br>
+        <label for="">Birthdate</label>
+        <input type="text" name="program" class="form-control" value="<%= student.birthdate%>" disabled>
+        <br>
+        <label for="">Gender</label>
+        <input type="text" name="program" class="form-control" value="<%= student.gender%>" disabled>
+        <br>
+        <label for="">Civil Status</label>
+        <input type="text" name="program" class="form-control" value="<%= student.civilstatus%>" disabled>
+        <br>
+        <label for="">Country</label>
+        <input type="text" name="program" class="form-control" value="<%= student.country%>" disabled>
+        <br>
+        <label for="">Region</label>
+        <input type="text" name="program" class="form-control" value="<%= student.region%>" disabled>
+        <br>
+        <label for="">Province</label>
+        <input type="text" name="program" class="form-control" value="<%= student.province%>" disabled>
+        <br>
+        <label for="">City</label>
+        <input type="text" name="program" class="form-control" value="<%= student.city%>" disabled>
+        <br>
+        <label for="">Barangay</label>
+        <input type="text" name="program" class="form-control" value="<%= student.barangay%>" disabled>
+        <br>
+        <label for="">Zip Code</label>
+        <input type="text" name="program" class="form-control" value="<%= student.zipcode%>" disabled>
+        <br>
+        <label for="">Address</label>
+        <input type="text" name="program" class="form-control" value="<%= student.address%>" disabled>
+        <br>
+        <label for="">Hobbies</label>
+        <input type="text" name="program" class="form-control" value="<%= student.hobbies%>" disabled>
+        <br>
+        <label for="">Created At</label>
+        <input type="text" name="" class="form-control" id="" value="<%= student.createdAt %>" disabled>
+        <br>
+        <label for="">Updated At</label>
+        <input type="text" name="" class="form-control" id="" value="<%= student.updatedAt %>" disabled>
+        <br>
+        <a href="/home" class="btn btn-outline-info">Go Back</a>
+      </form>
+    </div>
+  </body>
+</html>

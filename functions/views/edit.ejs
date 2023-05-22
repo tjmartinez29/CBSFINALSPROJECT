@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    body {
+      background-color: #f1f1f1;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    .btn-link {
+      color: #007bff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    .btn-link:hover {
+      text-decoration: underline;
+    }
+
+    .btn-outline-success {
+      display: inline-block;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #28a745;
+      border-color: #28a745;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-outline-success:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Current Date and Time</h1>
+  <p id="datetime"></p>
+  <form method="POST" action="/edit/<%= student.id %>" class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" name="firstname" value="<%= student.firstname %>" required>
+    <br>
+    <label for="middlename">Middle Name</label>
+    <input type="text" id="middlename" name="middlename" value="<%= student.middlename %>" required>
+    <br>
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" name="lastname" value="<%= student.lastname%>" required>
+    <br>
+    <label for="birthdate">Birthdate</label>
+    <input type="text" id="birthdate" name="birthdate" value="<%= student.birthdate%>" required>
+    <br>
+    <label for="gender">Gender</label>
+    <input type="text" id="gender" name="gender" value="<%= student.gender%>" required>
+    <br>
+    <label for="civilstatus">Civil Status</label>
+    <input type="text" id="civilstatus" name="civilstatus" value="<%= student.civilstatus%>" required>
+    <br>
+    <label for="country">Country</label>
+    <input type="text" id="country" name="country" value="<%= student.country%>" required>
+    <br>
+    <label for="region">Region</label>
+    <input type="text" id="region" name="region" value="<%= student.region%>" required>
+    <br>
+    <label for="province">Province</label>
+    <input type="text" id="province" name="province" value="<%= student.province%>" required>
+    <br>
+    <label for="city">City</label>
+    <input type="text" id="city" name="city" value="<%= student.city%>" required>
+    <br>
+    <label for="barangay">Barangay</label>
+    <input type="text" id="barangay" name="barangay" value="<%= student.barangay%>" required>
+    <br>
+    <label for="zipcode">Zip Code</label>
+    <input type="text" id="zipcode" name="zipcode" value="<%= student.zipcode%>" required>
+    <br>
+    <label for="address">Address</label>
+    <input type="text" id="address" name="address" value="<%= student.address%>" required>
+    <br>
+    <label for="hobbies">Hobbies</label>
+    <input type="text" id="hobbies" name="hobbies" value="<%= student.hobbies%>" required>
+    <br>
+    <a href="/home" class="btn-link">Go back</a>
+    <input class="btn btn-outline-success btn-lg" type="submit" value="Update">
+  </form>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script>
+  function showDateTime() {
+    var currentDate = new Date();
+    var date = currentDate.toISOString().split("T")[0];
+    var time = currentDate.toISOString().split("T")[1].split("Z")[0];
+    var offset = (currentDate.getTimezoneOffset() / 60) * -1;
+    var offsetHours = Math.floor(offset);
+    var offsetMinutes = (offset - offsetHours) * 60;
+    var timezoneOffset = (offsetHours < 10 ? "0" : "") + offsetHours + ":" + (offsetMinutes < 10 ? "0" : "") + offsetMinutes;
+    var dateTime = date + "T" + time + "." + currentDate.getMilliseconds() + (timezoneOffset < 0 ? "-" : "+") + timezoneOffset;
+    document.getElementById("datetime").innerHTML = dateTime;
+  }
+  window.onload = showDateTime;
+</script>
+</body>
+</html>

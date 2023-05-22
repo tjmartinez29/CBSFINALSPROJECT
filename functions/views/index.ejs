@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>RECORDS</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- New CSS styles -->
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .table {
+      width: 100%;
+      background-color: #fff;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+
+    .table th,
+    .table td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #007bff;
+      color: #007bff;
+    }
+
+    .btn-outline:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+    }
+
+    .btn-danger:hover {
+      background-color: #c82333;
+    }
+
+    .btn-secondary {
+      background-color: #6c757d;
+    }
+
+    .btn-secondary:hover {
+      background-color: #5a6268;
+    }
+
+    .btn-info {
+      background-color: #17a2b8;
+    }
+
+    .btn-info:hover {
+      background-color: #138496;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>RECORDS</h1>
+    <a href="/create" class="btn btn-outline btn-dark">Insert Data</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Middle Name</th>
+          <th>Last Name</th>
+          <th>Birthdate</th>
+          <th>Gender</th>
+          <th>Civil Status</th>
+          <th>Country</th>
+          <th>Region</th>
+          <th>Province</th>
+          <th>City</th>
+          <th>Barangay</th>
+          <th>Zip Code</th>
+          <th>Address</th>
+          <th>Hobbies</th>
+          <th>Date Created</th>
+          <th>Date Updated</th>
+          <th colspan="3">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% students.forEach((student) => {%> 
+          <tr style="text-align: center;">
+            <!-- <td><%= student.id %></td> -->
+            <td><%= student.firstname %></td>
+            <td><%= student.middlename %></td>
+            <td><%= student.lastname %></td>
+            <td><%= student.birthdate %></td>
+            <td><%= student.gender %></td>
+            <td><%= student.civilstatus %></td>
+            <td><%= student.country %></td>
+            <td><%= student.region %></td>
+            <td><%= student.province %></td>
+            <td><%= student.city %></td>
+            <td><%= student.barangay %></td>
+            <td><%= student.zipcode %></td>
+            <td><%= student.address %></td>
+            <td><%= student.hobbies %></td>
+            <td><%= student.createdAt %></td>
+            <td><%= student.updatedAt %></td>
+            <td><a href="/view/<%= student.id %>" class="btn btn-outline-info">View</a></td>
+            <td><a href="/edit/<%= student.id %>" class="btn btn-outline-secondary">Update</a></td>
+            <td>
+              <form action="/delete/<%= student.id %>" method="post">
+                <button type="submit" class="btn btn-outline-danger">
+                  Delete
+                </button>
+              </form>
+          </td>
+          </tr>
+          <% }) %>
+        </table>
+        
+  <!-- Optional JavaScript -->
+  <!-- jQuery, Popper.js, and Bootstrap JS are removed as they were not used in the new design -->
+
+</body>
+</html>
