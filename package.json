@@ -17,8 +17,6 @@
     "http-errors": "~1.6.3",
     "jade": "^0.29.0",
     "morgan": "~1.9.1",
-    "netlify-cli": "^15.1.1",
-    "netlify-lambda": "^2.0.16",
     "nodemon": "^2.0.22",
     "serverless-http": "^3.2.0"
   },
